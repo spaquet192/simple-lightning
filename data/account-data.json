@@ -1,6 +1,6 @@
 {
 "records" :[{
-    "attributes" : {"type" : "Account", "referenceId" : "SampleAccountRef"},
+    "attributes" : {"type" : "Account", "referenceId" : "AcctRef1"},
     "name" : "SampleAccount",
     "phone" : "1234567890",
     "website" : "www.salesforce.com",
@@ -8,19 +8,19 @@
     "industry" : "Banking",
     "Contacts" : {
       "records" : [{
-         "attributes" : {"type" : "Contact", "referenceId" : "PresidentSmithRef"},
+         "attributes" : {"type" : "Contact", "referenceId" : "CcRef1"},
          "lastname" : "Smith",
          "title" : "President",
          "email" : "jane_smith@salesforce.com"
          },{         
-         "attributes" : {"type" : "Contact", "referenceId" : "VPEvansRef"},
+         "attributes" : {"type" : "Contact", "referenceId" : "CcRef2"},
          "lastname" : "Evans",
          "title" : "Vice President",
          "email" : "joe_evans@salesforce.com"
          }]
       }
     },{
-    "attributes" : {"type" : "Account", "referenceId" : "SampleAcct2Ref"},
+    "attributes" : {"type" : "Account", "referenceId" : "AcctRef2"},
     "name" : "SampleAccount2",
     "phone" : "1234567890",
     "website" : "www.salesforce2.com",

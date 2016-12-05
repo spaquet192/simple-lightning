@@ -10,17 +10,13 @@
                     Id : rec.Id,
                     Subject: rec.Subject,
                     DueDate: rec.ActivityDate,
+                    Comment: rec.Description,
                     Status: rec.Status
                 });
             }
             
             component.set("v.tasks", recs);  
         }, {
-            taskName: "",
-            taskId: "",
-            taskStatus: "",
-            startDate: "",
-            endDate: ""
         });
     },
     
@@ -35,12 +31,6 @@
             recordName: rowName
         });
         compEvent.fire();
-        /*appEvent.setParams({
-            recordId: rowId,
-            recordName: rowName            
-        });
-        appEvent.fire();
-        */
     },
     
     showSelectedRecord: function(component, event, helper) {

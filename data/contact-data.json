@@ -1,24 +1,12 @@
 {
-  "records" : [{
-     "attributes" : {"type" : "Contact", "referenceId" : "FrontDeskRef"},
-     "lastname" : "Jones",
-     "title" : "Customer Service Rep",
-     "email" : "tom_jones@salesforce.com",
-     "AccountId" : "@SampleAccountRef"
-     },{         
-     "attributes" : {"type" : "Contact", "referenceId" : "ManagerRef"},
-     "lastname" : "Davis",
-     "title" : "Customer Service Manager",
-     "email" : "anne_davis@salesforce.com",
-     "AccountId" : "@SampleAcct2Ref"
-     },
+  "records" : [
      {
-     "attributes" : {"type" : "Contact", "referenceId" : "JanitorRef"},
+     "attributes" : {"type" : "Contact", "referenceId" : "CRef3"},
      "lastname" : "Brown",
      "title" : "Sanitation Engineer",
      "email" : "james_brown@salesforce.com"
      },{         
-     "attributes" : {"type" : "Contact", "referenceId" : "DeveloperRef"},
+     "attributes" : {"type" : "Contact", "referenceId" : "CRef4"},
      "lastname" : "Stevens",
      "title" : "Software Developer",
      "email" : "samantha_stevens@salesforce.com"

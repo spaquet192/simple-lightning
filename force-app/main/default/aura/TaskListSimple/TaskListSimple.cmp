@@ -19,6 +19,9 @@
                 <b>Due Date</b>
             </lightning:layoutItem>
             <lightning:layoutItem flexibility="auto" padding="around-small">
+                <b>Comment</b>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
                 <b>Status</b>
             </lightning:layoutItem>
         </lightning:layout>
@@ -29,6 +32,9 @@
                 </lightning:layoutItem>
                 <lightning:layoutItem flexibility="auto" padding="around-small">
                     {!task.DueDate}
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!task.Comment}
                 </lightning:layoutItem>
                 <lightning:layoutItem flexibility="auto" padding="around-small">
                     {!task.Status}

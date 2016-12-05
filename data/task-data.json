@@ -1,17 +1,42 @@
 {
-  "records" : [{
+  "records" : [
+  {
      "attributes" : {"type" : "Task", "referenceId" : "task1ref"},
      "subject" : "My first task",
      "priority" : "Normal",
-     "description" : "Please do this task",
-     "WhatId" : "@SampleAccountRef",
-     "WhoId" : "@FrontDeskRef"
-     },{         
+     "description" : "Please do this task"
+     },
+     { 
+     "attributes" : {"type" : "Task", "referenceId" : "task2ref"},             
      "subject" : "My Second task",
-     "priority" : "Urgen",
-     "description" : "Please do this task first",
-     "WhatId" : "@SampleAccount2Ref",
-     "WhoId" : "@ManagerRef"
+     "priority" : "Urgent",
+     "description" : "Please do this task first"
+     },
+  	{
+     "attributes" : {"type" : "Task", "referenceId" : "task3ref"},
+     "subject" : "My third task",
+     "priority" : "Normal",
+     "description" : "Please do this task"
+     },
+     { 
+     "attributes" : {"type" : "Task", "referenceId" : "task4ref"},             
+     "subject" : "My fourth task",
+     "priority" : "Urgent",
+     "description" : "Please do this task first"
+     },
+  	{
+     "attributes" : {"type" : "Task", "referenceId" : "task5ref"},
+     "subject" : "My fifth task",
+     "status" : "In Progress",
+     "priority" : "Normal",
+     "description" : "Please do this task"
+     },
+     { 
+     "attributes" : {"type" : "Task", "referenceId" : "task6ref"},             
+     "subject" : "My sixth task",
+     "priority" : "Critical",
+     "status" : "Completed",
+     "description" : "Please do this task first"
      }
   ]
 }
