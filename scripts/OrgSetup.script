@@ -1,5 +1,6 @@
 #!/bin/sh
 PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
+/usr/local/bin/heroku force:org:delete -f -u < cat /Users/spaquet/dev/SalesforceDx/simple-lightning/.appcloud/workspaceorg.json | egrep ':' | awk '{ split($0,a,": \""); b=a[2]; split(b,c,"\""); print c[1];}'
 /usr/local/bin/heroku force:org:create -f /Users/spaquet/dev/SalesforceDx/simple-lightning/config/workspace-scratch-def.json
 /usr/local/bin/heroku force:data:import -p /Users/spaquet/dev/SalesforceDx/simple-lightning/data/sample-data-plan.json
 /usr/local/bin/heroku force:src:push
