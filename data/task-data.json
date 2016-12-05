@@ -3,13 +3,13 @@
      "attributes" : {"type" : "Task", "referenceId" : "task1ref"},
      "subject" : "My first task",
      "priority" : "Normal",
-     "comment" : "Please do this task",
+     "description" : "Please do this task",
      "WhatId" : "@SampleAccountRef",
      "WhoId" : "@FrontDeskRef"
      },{         
      "subject" : "My Second task",
      "priority" : "Urgen",
-     "comment" : "Please do this task first",
+     "description" : "Please do this task first",
      "WhatId" : "@SampleAccount2Ref",
      "WhoId" : "@ManagerRef"
      }
