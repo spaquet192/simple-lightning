@@ -1,0 +1,3 @@
+.THIS.hideModal, .THIS.hideModal + .slds-backdrop {
+    display: none !important;
+}

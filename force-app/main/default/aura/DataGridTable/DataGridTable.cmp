@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    
+    <aura:dependency resource="markup://c:DataRowClick" type="EVENT"/>
+ 
+<aura:attribute name="cols" 
+  type="Object[]" 
+  access="GLOBAL" 
+  description="The grid columns."/> 
+
+<aura:attribute name="rows" 
+  type="Object[]" 
+  access="GLOBAL" 
+  description="The grid row data."/>   
+    
+<aura:registerEvent name="rowClick"
+                    type="c:DataRowClick"/>
+ 
+<table class="slds-table slds-table--bordered slds-max-medium-table--stacked">
+  <thead>
+    <tr class="slds-text-heading--label">
+     <aura:iteration items="{!v.cols}" var="col" indexVar="idx">
+         <th scope="col" class="{!col.class}"><span class="slds-truncate">{!col.label}</span></th>  
+     </aura:iteration>
+    </tr>
+  </thead>
+  <tbody >
+  <aura:iteration items="{!v.rows}" var="row" indexVar="idx">
+    <tr onclick="{!c.onRowClick}"
+        class="slds-hint-parent" data-row="{!idx}" data-pk="{!row.pk}">
+         <aura:iteration items="{!row.data}" var="colData">
+             <td class="{!colData.class}"  data-label="{!colData.label}">
+                 <span class="slds-truncate">{!colData.data}</span>
+             </td>
+         </aura:iteration>
+    </tr>
+  </aura:iteration>
+  </tbody>
+</table>	
+</aura:component>

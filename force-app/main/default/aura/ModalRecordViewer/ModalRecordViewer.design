@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="recordName" description="Record Name"/>
+    <design:attribute name="recordId" description="Record Id"/>
+</design:component>

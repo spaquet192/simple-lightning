@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+	<aura:attribute name="cols"
+                    type="Object[]"
+                    access="PRIVATE"
+                    description="The grid columns."/>
+    <aura:attribute name="rows"
+                    type="Object[]"
+                    access="PRIVATE"
+                    description="The grid row data."/>
+    
+    <aura:handler name="init"
+                  value="{!this}"
+                  action="{!c.doInit}"/>
+    
+    <aura:method name="refresh"
+                 action="{!c.doInit}"
+                 access="PUBLIC"
+                 description="Re-parse body components"/>
+    
+   <center><ui:spinner aura:id="spinner"/></center>  
+    <c:DataGridTable rows="{!v.rows}"
+                     cols="{!v.cols}" />
+   
+</aura:component>

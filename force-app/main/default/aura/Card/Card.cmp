@@ -1,0 +1,29 @@
+<aura:component access="global" >
+    <aura:attribute name="header" type="String" default="Card Header"/>
+    <aura:attribute name="footer" type="String" default="Card Footer"/>
+    <aura:attribute name="action" type="String" default="New"/>
+    <article class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__figure">
+            <c:svgIcon svgPath="/assets/icons/standard-sprite/svg/symbols.svg#contact" 
+                       category="standard" 
+                       name="contact" 
+                       size="small"/>
+          </div>
+          <div class="slds-media__body slds-truncate">
+            <h2>
+              <a href="javascript:void(0);" class="slds-text-link--reset">
+                <span class="slds-text-heading--small">{!v.header}</span>
+              </a>
+            </h2>
+          </div>
+        </header>
+        <div class="slds-no-flex">
+          <button class="slds-button slds-button--neutral">{!v.action}</button>
+        </div>
+      </div>
+      <div class="slds-card__body">{!v.body}</div>
+      <div class="slds-card__footer">{!v.footer}</div>
+	</article>
+</aura:component>

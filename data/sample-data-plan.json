@@ -1,0 +1,32 @@
+[
+    {
+        "sobject": "Account",
+        "saveRefs": false,
+        "files": [
+            {
+                "file": "accounts-data.json",
+                "saveRefs": true
+            }
+        ]
+    },
+    {
+        "sobject": "Contact",
+        "resolveRefs": false,
+        "files": [
+            {
+                "file": "contacts-data.json",
+                "resolveRefs": true
+            }
+        ]
+    },
+    {
+    	"sobject": "Task",
+    	"resolveRefs": false,
+    	"files": [
+    		{
+    			"file": "tasks-data.json",
+    			"resolveRefs": true
+    		}
+    	]
+    }
+]

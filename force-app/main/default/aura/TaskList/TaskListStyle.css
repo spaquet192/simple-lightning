@@ -1,0 +1,7 @@
+.THIS.studentlist {
+	height: calc(100% - 60px);
+}
+
+.THIS .slds-is-selected td {
+    font-weight: bold;
+}

@@ -1,0 +1,6 @@
+#!/bin/sh
+PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
+/usr/local/bin/heroku force:org:create -f /Users/spaquet/dev/SalesforceDx/sfdx-lightning/config/workspace-scratch-def.json
+/usr/local/bin/heroku force:data:import -p /Users/spaquet/dev/SalesforceDx/sfdx-lightning/data/sample-data-plan.json
+/usr/local/bin/heroku force:src:push
+/usr/local/bin/heroku force:org:open -p /c/TaskListSimpleApp1.app

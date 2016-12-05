@@ -1,0 +1,58 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="TaskListController" >
+    <aura:attribute name="taskName" type="String" default="" />
+    <aura:attribute name="taskId" type="String" default="" />
+    <aura:attribute name="taskStatus" type="String" default=""/>
+    <aura:attribute name="startDate" type="String" default="" />
+    <aura:attribute name="endDate" type="String" default="" />
+    
+    <aura:method name="refresh" 
+                 action="{!c.doInit}" 
+                 access="PUBLIC"
+                 description="Re-invokes doInit() method" />
+     
+    <aura:dependency resource="markup://c:ModalDialog" />
+    
+    <aura:handler name="rowclick" 
+                  event="c:DataRowClick" 
+                  action="{!c.onListItemClick}"/>
+    
+    <aura:handler name="init" 
+                  value="{!this}" 
+                  action="{!c.doInit}" />
+    
+    <aura:attribute name="rows" 
+                    type="Object[]" 
+                    access="PRIVATE" 
+                    description="The row data."/>  
+    
+    <aura:attribute name="selectedRecordId" 
+                    type="String" 
+                    access="PUBLIC" 
+                    description="The currently selected record id"
+                    default=""/>
+    
+    
+    <aura:attribute name="selectedRowEl" 
+                    type="Object" 
+                    access="PRIVATE" 
+                    description="The currently selected record element"
+                    default=""/>
+    
+    {!v.body}
+    
+    <div class="slds-scrollable--y">
+        <c:DataGrid aura:Id="grid">
+            <c:DataGridColumn label="Name" />
+            <c:DataGridColumn label="Due Date" />
+            <c:DataGridColumn label="Status"/>
+            
+            
+            <aura:iteration items="{!v.rows}" var="row">
+                <c:DataGridRow pk="{!row.pk}" 
+                               data="{!row.data}" 
+                               delimiter="{!row.delimiter}"/>
+            </aura:iteration>
+            
+        </c:DataGrid>
+    </div>	
+</aura:component>

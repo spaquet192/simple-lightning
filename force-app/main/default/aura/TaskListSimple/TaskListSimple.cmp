@@ -1,0 +1,40 @@
+<aura:component access="global" controller="TaskListController" extends="c:DataService" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="tasks" type="Task[]"/>
+    <aura:dependency resource="c:DataService"/>
+    <aura:dependency resource="c:ModalRecordViewer"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="rowClick" type="c:TaskListRowClick"/>
+    <aura:registerEvent name="rowClickApp" type="c:TaskListRowClickApp"/>
+    <aura:handler name="rowClick" event="c:TaskListRowClick"
+                  action="{!c.showSelectedRecord}"/>
+    <aura:handler event="c:TaskListRowClickApp"
+                  action="{!c.showSelectedRecord}"/>
+    
+    <div class="slds-container">
+        <lightning:layout horizontalAlign="space" class="slds-page-header">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <b>Subject</b>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <b>Due Date</b>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <b>Status</b>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <aura:iteration items="{!v.tasks}" var="task"> 
+            <lightning:layout horizontalAlign="space" class="slds-table slds-table--bordered slds-table--cell-buffer">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <a href="#" data-row="{!task.Id}" onclick="{!c.onRowClick}">{!task.Subject}</a>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!task.DueDate}
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!task.Status}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:iteration>
+    </div>
+    {!v.body}	
+</aura:component>

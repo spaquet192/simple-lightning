@@ -1,0 +1,8 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="recordName" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+    {!v.body}
+	<c:ModalDialog title="{!'Record details for' + v.recordName}">
+        <force:recordView recordId="{!v.recordId}" type="MINI"/>
+    </c:ModalDialog>
+</aura:component>

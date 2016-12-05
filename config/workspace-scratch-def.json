@@ -1,0 +1,10 @@
+{
+  "Company": "SampleApp Company",
+  "Country": "US",
+  "LastName": "Sample App",
+  "Email": "spaquet192@gmail.com",
+  "Edition": "Developer",
+  "OrgPreferences" : {
+    "S1DesktopEnabled" : true
+  }
+}

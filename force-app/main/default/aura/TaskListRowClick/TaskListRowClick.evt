@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Fired from TaskList">
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="recordName" type="String"/>
+</aura:event>

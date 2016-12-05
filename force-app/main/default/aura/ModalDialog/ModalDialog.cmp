@@ -1,0 +1,49 @@
+<aura:component access="global">
+    <aura:attribute name="title" type="String" required="true" />
+    <aura:attribute name="closable" type="Boolean" default="true"/>
+    
+    <aura:attribute name="closeLabel" type="String" default="Close"/>
+    <aura:attribute name="cancelLabel" type="String" default=""/>
+    <aura:attribute name="confirmLabel" type="String" default="Ok"/>
+    
+    <aura:attribute name="onclose" type="Aura.Action" default="{!c.defaultCloseAction}"/>
+    <aura:attribute name="oncancel" type="Aura.Action" default="{!c.defaultCloseAction}"/> 
+    <aura:attribute name="onconfirm" type="Aura.Action" default="{!c.defaultCloseAction}"/>
+    
+	<div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header">
+            <aura:if isTrue="{!v.closable}">
+                <lightning:buttonIcon class="slds-modal__close"
+                                      iconName="utility:close"
+                                      size="large"
+                                      variant="bare-inverse"
+                                      onclick="{!c.handleClick}"
+                                      alternativeText="{!v.closeLabel}"/>
+            </aura:if>
+          <h2 id="header43" class="slds-text-heading--medium">
+            {!v.title}
+          </h2>
+        </div>
+        <div class="slds-modal__content slds-p-around--medium">
+          <div>
+            {!v.body}
+          </div>
+        </div>
+        <div class="slds-modal__footer">
+          <aura:if isTrue="{!v.cancelLabel != ''}">
+              <lightning:button label="{!v.cancelLabel}"
+                                onclick="{!v.oncancel}"
+                                variant="neutral" />
+          </aura:if>
+          <aura:if isTrue="{!v.confirmLabel != ''}">
+              <lightning:button label="{!v.confirmLabel}"
+                            onclick="{!v.onconfirm}"
+                            variant="brand" />
+          </aura:if>
+        </div>
+	  </div>
+	</div>
+	<div class="slds-backdrop slds-backdrop--open"></div>
+    
+</aura:component>
