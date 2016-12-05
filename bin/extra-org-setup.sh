@@ -29,7 +29,7 @@ runCmd() {
 
 # Set perms on apps and objects
 echo "Enabling SimpleApp PermissionSet for App and SObject visibility..."
-runCmd "$HEROKU_CLIENT force:permset:assign --name SimpleApp"
+#runCmd "$HEROKU_CLIENT force:permset:assign --name SimpleApp"
 
 
 if [ "$LOAD_DATA" != false ]; then
