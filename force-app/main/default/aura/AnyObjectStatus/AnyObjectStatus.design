@@ -1,4 +1,4 @@
-<design:component>
+<design:component label="Picklist Progress Bar">
     <design:attribute name="objectName" label="Object Name" description="Select Target Object name to pick field from"/>
     <design:attribute name="picklistSource" label="Picklist Field API Name" description="Enter API name for target picklist field to map"/>
     <design:attribute name="recordId" label="Target Record Id" description="Enter a specific object's record id to test"/>
