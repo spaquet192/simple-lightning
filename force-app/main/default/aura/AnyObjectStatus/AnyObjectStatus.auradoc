@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>Documentation</aura:description>
+	<aura:example name="AnyObjectStatus" ref="c:ExampleAnyObjectStatus" label="Sample Any Object Status">
+		Example Description
+	</aura:example>
+</aura:documentation>

@@ -1,9 +1,11 @@
 ({
 	doInit : function(component, event, helper) {
         var picklistField = component.get('v.picklistSource');
-        var currentId = component.get('v.recordId');
+        var objectName = component.get('v.objectName');
+        var currentId = component.get('v.recordId') || '';
+        var currentStage = component.get('v.currentStage') || '';
         // Get initial stages from target picklist
-        helper.callServer(component,"c.getStages",function(response){
+        helper.callServer(component,"c.getStatus",function(response){
             var rec;
             var recs = [];
             var data = JSON.parse(response);
@@ -12,25 +14,17 @@
                 recs.push({
                     name: rec.name,
                     helpText: rec.helpText,
-                    className: rec.className
+                    className: rec.selected ? 'slds-is-current' : ''
                 });
+                if (rec.selected) { currentStage = rec.name; }
             }
+            debugger;
             component.set("v.stages", recs);  
+            component.set('v.currentStage',currentStage);
         }, {
-            objectName: 'Task',
+            objectName: objectName,
             picklistFieldName: picklistField,
             recordId: currentId
-        });
-        
-        // Get current status for picklist
-        helper.callServer(component,"c.getFieldValue",function(response){
-            component.set('v.currentStage',response);
-        }, {
-            fieldName: picklistField,
-            recordId: currentId
-        });
-        
-        debugger;
-		
+        });	
 	}
 })

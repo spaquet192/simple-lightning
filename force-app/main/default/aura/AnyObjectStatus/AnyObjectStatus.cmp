@@ -1,7 +1,7 @@
 <aura:component controller="AnyObjectStatusController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
     <aura:attribute name="recordId" type="String" default=""/>
-    <aura:attribute name="objectName" type="String" default="Opportunity"/>
-    <aura:attribute name="picklistSource" type="String" default="Stage"/>
+    <aura:attribute name="objectName" type="String" default="Task" required="true"/>
+    <aura:attribute name="picklistSource" type="String" default="Status" required="true"/>
     <aura:attribute name="stages" type="Object[]"/>
     <aura:attribute name="currentStage" type="String"/>
     <aura:attribute name="label" type="String" default="Status:"/>
@@ -12,8 +12,7 @@
         <div class="slds-tabs--path" role="application">
             <ul class="slds-tabs--path__nav" role="tablist">
                 <aura:iteration items="{!v.stages}" var="stage">
-                    <!--<li class="slds-tabs-[REMOVE THIS]-path__item slds-is-complete" role="presentation">-->
-                    <li class="{!stage.className}" role="presentation">
+                    <li class="slds-tabs--path__item" role="presentation">
                         <a class="slds-tabs--path__link" id="tabs-path-426" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
                             <span class="slds-tabs--path__stage">
                                 <c:svgIcon svgPath="/assets/icons/utility-sprite/svg/symbols.svg" 
