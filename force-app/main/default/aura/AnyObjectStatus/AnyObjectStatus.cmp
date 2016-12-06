@@ -1,7 +1,7 @@
 <aura:component controller="AnyObjectStatusController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
     <aura:attribute name="recordId" type="String" default=""/>
-    <aura:attribute name="objectName" type="String"/>
-    <aura:attribute name="picklistSource" type="String"/>
+    <aura:attribute name="objectName" type="String" default="Opportunity"/>
+    <aura:attribute name="picklistSource" type="String" default="Stage"/>
     <aura:attribute name="stages" type="Object[]"/>
     <aura:attribute name="currentStage" type="String"/>
     <aura:attribute name="label" type="String" default="Status:"/>
