@@ -2,13 +2,6 @@
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <componentInstances>
-            <componentName>force:detailPanel</componentName>
-        </componentInstances>
-        <name>header</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
             <componentInstanceProperties>
                 <name>objectName</name>
                 <value>Task</value>
@@ -23,6 +16,13 @@
             </componentInstanceProperties>
             <componentName>AnyObjectStatus</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>force:detailPanel</componentName>
+        </componentInstances>
+        <name>header</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

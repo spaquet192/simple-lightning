@@ -1,6 +1,7 @@
 ({
     doInit: function(component, event, helper) {          
         helper.callServer(component,"c.getMyTasks",function(response){
+            debugger;
             var rec;
             var recs = [];
             

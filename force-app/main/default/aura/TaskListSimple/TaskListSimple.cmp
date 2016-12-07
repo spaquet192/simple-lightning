@@ -1,15 +1,19 @@
 <aura:component access="global" controller="TaskListController" extends="c:DataService" implements="flexipage:availableForAllPageTypes">
     <aura:attribute name="tasks" type="Task[]"/>
+    
     <aura:dependency resource="c:DataService"/>
     <aura:dependency resource="c:ModalRecordViewer"/>
+    
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:registerEvent name="rowClick" type="c:TaskListRowClick"/>
-    <aura:registerEvent name="rowClickApp" type="c:TaskListRowClickApp"/>
+    
     <aura:handler name="rowClick" event="c:TaskListRowClick"
                   action="{!c.showSelectedRecord}"/>
     <aura:handler event="c:TaskListRowClickApp"
                   action="{!c.showSelectedRecord}"/>
     
+    <aura:registerEvent name="rowClick" type="c:TaskListRowClick"/>
+    <aura:registerEvent name="rowClickApp" type="c:TaskListRowClickApp"/>
+
     <div class="slds-container">
         <lightning:layout horizontalAlign="space" class="slds-page-header">
             <lightning:layoutItem flexibility="auto" padding="around-small">
